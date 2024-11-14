@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using LeanCloud.Storage;
-using TapTap.UI.AillieoTech;
 using UnityEngine;
 using UnityEngine.UI;
+using TapSDK.UI.AillieoTech;
+
 
 public class ListView_score : MonoBehaviour
 {
@@ -60,27 +60,37 @@ public class ListView_score : MonoBehaviour
 
     }
 
-    private async void InitData()
+    private void InitData()
     {
-        var leaderboard = LCLeaderboard.CreateWithoutData("CherryNum");
-        //注意，排行榜显示昵称就用 nickname，排行榜显示用户名就用 username。
-        var rankings = await leaderboard.GetResults(limit: 200, selectKeys: new List<string> { "username", "nickname" });
-        foreach (var statistic in rankings)
-        {
-            //Debug.Log("排行榜的名称是：" + statistic.StatisticName);
-            //Debug.Log("排行榜的分数是：" + statistic.Value);
-            //Debug.Log("排名是：" + statistic.Rank);
-            //Debug.Log("用户 ID 是：" + statistic.User.ObjectId);
-            //Debug.Log("用户昵称：" + statistic.User["nickname"]);
 
+        for (int i = 1; i <= 500; ++i)
+        {
             RankItemData data = new RankItemData();
-            data.rank = statistic.Rank + 1;
-            data.name = statistic.User.Username;
-            data.score = statistic.Value.ToString();
-            //可选
-            // data.name = statistic.User["nickname"].ToString();
+            data.rank = i;
+            data.name = "Name_" + i;
+            data.score = "Score_" + i;
             testData.Add(data);
         }
+
+        //var leaderboard = LCLeaderboard.CreateWithoutData("CherryNum");
+        ////注意，排行榜显示昵称就用 nickname，排行榜显示用户名就用 username。
+        //var rankings = await leaderboard.GetResults(limit: 200, selectKeys: new List<string> { "username", "nickname" });
+        //foreach (var statistic in rankings)
+        //{
+        //    //Debug.Log("排行榜的名称是：" + statistic.StatisticName);
+        //    //Debug.Log("排行榜的分数是：" + statistic.Value);
+        //    //Debug.Log("排名是：" + statistic.Rank);
+        //    //Debug.Log("用户 ID 是：" + statistic.User.ObjectId);
+        //    //Debug.Log("用户昵称：" + statistic.User["nickname"]);
+
+        //    RankItemData data = new RankItemData();
+        //    data.rank = statistic.Rank + 1;
+        //    data.name = statistic.User.Username;
+        //    data.score = statistic.Value.ToString();
+        //    //可选
+        //    // data.name = statistic.User["nickname"].ToString();
+        //    testData.Add(data);
+        //}
         scrollView.UpdateData(true);
     }
 }

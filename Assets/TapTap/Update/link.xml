@@ -1,0 +1,4 @@
+<linker>
+  <assembly fullname="TapTap.Update.Runtime" preserve="all" />
+  <assembly fullname="TapTap.Update.Mobile.Runtime" preserve="all" />
+</linker>

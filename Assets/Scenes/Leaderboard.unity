@@ -326,29 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f3e076f25860743a2d5212b2c285ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Content: {fileID: 487607778}
-  m_Horizontal: 0
-  m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: 0.1
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 620945225}
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 0
-  m_HorizontalScrollbarSpacing: 0
-  m_VerticalScrollbarSpacing: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  defaultItemSize: {x: 1350, y: 120}
-  itemTemplate: {fileID: 2116775111}
-  layoutType: 1
-  poolSize: 20
-  pageSize: 30
 --- !u!114 &94143733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2990,32 +2967,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1170679194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f3e076f25860743a2d5212b2c285ac, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Content: {fileID: 432980015}
-  m_Horizontal: 0
-  m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: 0.1
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 308506717}
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 0
-  m_HorizontalScrollbarSpacing: 0
-  m_VerticalScrollbarSpacing: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  defaultItemSize: {x: 1350, y: 120}
-  itemTemplate: {fileID: 1549907748}
-  layoutType: 1
-  poolSize: 20
-  pageSize: 30
 --- !u!114 &1170679197
 MonoBehaviour:
   m_ObjectHideFlags: 0

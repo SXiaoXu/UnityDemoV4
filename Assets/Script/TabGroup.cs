@@ -1,8 +1,9 @@
 using System.Collections.Generic;
-using TapTap.UI.AillieoTech;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TapSDK.UI.AillieoTech;
+
 
 public class TabGroup : MonoBehaviour
 {
