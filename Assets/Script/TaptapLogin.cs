@@ -1,31 +1,31 @@
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using TapSDK.Core;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
-
 
 public class TaptapLogin : MonoBehaviour
 {
-
     void Start()
     {
+        // 核心配置
+        TapTapSdkOptions coreOptions =
+            new TapTapSdkOptions {
+                // 客户端 ID，开发者后台获取
+                clientId = "cbsavbfej13dvjoki0",
+                // 客户端令牌，开发者后台获取
+                clientToken = "4F91hepHbuwas6jmgusYFIyr9HkcFADjEaio101H",
+                // 地区，CN 为国内，Overseas 为海外
+                region = TapTapRegionType.CN,
+                // 语言，默认为 Auto，默认情况下，国内为 zh_Hans，海外为 en
+                preferredLanguage = TapTapLanguageType.zh_Hans,
+                // 是否开启日志，Release 版本请设置为 false
+                enableLog = true
+            };
 
-        //var config = new TapConfig.Builder()
-        //    .ClientID("cbsavbfej13dvjoki0") // 必须，开发者中心对应 Client ID
-        //    .ClientToken("3wROiubU8Dkv5c3h5K6bsawFYMjoSqBxXN0A55Hm") // 必须，开发者中心对应 Client Token
-        //    .ServerURL("https://mlbfoduq.cloud.tds1.tapapis.cn") // 必须，开发者中心 > 你的游戏 > 游戏服务 > 基本信息 > 域名配置 > API
-        //    .RegionType(RegionType.CN) // 非必须，CN 表示中国大陆，IO 表示其他国家或地区
-        //    .ConfigBuilder();
-        //TapBootstrap.Init(config);
-
-        ////初始化防沉迷
-        //AntiAddictionInit();
-
-        ////隐藏悬浮窗
-        //TapConnect.SetEntryVisible(false);
-
+        // TapSDK 初始化
+        TapTapSDK.Init (coreOptions);
     }
 
     //public void AntiAddictionInit()
@@ -58,13 +58,11 @@ public class TaptapLogin : MonoBehaviour
     //        {
     //            // 用户当前无法进行游戏
     //            Debug.Log("用户当前无法进行游戏");
-
     //        }
     //        else if (code == 1050)
     //        {
     //            // 时长限制
     //            Debug.Log("当前用户玩游戏时长受限");
-
     //        }
     //        else if (code == 9002)
     //        {
@@ -74,17 +72,13 @@ public class TaptapLogin : MonoBehaviour
     //        }
     //        UnityEngine.Debug.LogFormat($"code: {code} error Message: {errorMsg}");
     //    };
-
     //    AntiAddictionUIKit.Init(config, callback);
-
     //    // 如果是 PC 平台还需要额外设置一下 gameId
     //    TapTap.AntiAddiction.TapTapAntiAddictionManager.AntiAddictionConfig.gameId = "mlbfoduqiglbdugddp";
     //}
-
     public async void taptapLogin()
     {
         //var currentUser = await TDSUser.GetCurrent();
-
         //if (null == currentUser)
         //{
         //    Debug.Log("当前未登录");
@@ -99,11 +93,8 @@ public class TaptapLogin : MonoBehaviour
         //        var objectId = tdsUser.ObjectId; // 用户唯一标识
         //        var nickname = tdsUser["nickname"]; // 昵称
         //        var avatar = tdsUser["avatar"]; // 头像
-
-
         //        Debug.Log("当前登录成功的用户是：");
         //        Debug.Log(nickname);
-
         //        // 登录成功以后开始防沉迷流程
         //        antiAddiction();
         //    }
@@ -128,6 +119,7 @@ public class TaptapLogin : MonoBehaviour
         //    antiAddiction();
         //}
     }
+
     public async void antiAddiction()
     {
         //var currentUser = await TDSUser.GetCurrent();
@@ -143,6 +135,7 @@ public class TaptapLogin : MonoBehaviour
         //    Debug.Log("未登录");
         //}
     }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -155,6 +148,4 @@ public class TaptapLogin : MonoBehaviour
         //    // 取消更新的事件
         //});
     }
-
-
 }
